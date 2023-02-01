@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Bill To" >
+        <div>
+          
+          <template if:true={billTo}>
+            <div>
+            {billTo.BillingStreet},{billTo.BillingCity},{billTo.BillingState}<br>
+            {billTo.BillingCountry},{billTo.BillingPostalCode}
+          </div>
+          </template>
+        </div>
+        </lightning-card>
+  </template>

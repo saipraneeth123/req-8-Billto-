@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Ship To" >
+        <div>
+          
+          <template if:true={shipTo}>
+            <div>
+            {shipTo.DeliverToName}<br><br>
+            {shipTo.DeliverToStreet},{shipTo.DeliverToCity},{shipTo.DeliverToState}<br>
+            {shipTo.DeliverToCountry},{shipTo.DeliverToPostalCode}
+          </div>
+          </template>
+        </div>
+        </lightning-card>
+</template>
