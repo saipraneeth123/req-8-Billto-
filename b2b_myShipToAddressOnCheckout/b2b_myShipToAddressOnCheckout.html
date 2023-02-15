@@ -82,34 +82,39 @@
 		  <lightning-input 
 			  type="text" 
 			  label="Name" 
-			  onchange={handleName}
+			  onchange={handle}
+		          data-id="Name"
 			  required="true">
 		   </lightning-input>
 		  <lightning-input 
 			  type="text" 
 			  label="Street" 
-			  onchange={handleStreet}
-			  >
+			  onchange={handle}
+			   data-id="street">
 		   </lightning-input>
 		  <lightning-input 
 			  type="text" 
 			  label="City" 
-			  onchange={handleCity} >
+			  onchange={handle}
+		          data-id="city">
 		   </lightning-input>
 		   <lightning-input 
 			  type="text" 
 			  label="State" 
-			  onchange={handleState} >
+			  onchange={handle}
+		          data-id="state">
 		   </lightning-input>
 		  <lightning-input 
 			  type="text" 
 			  label="Country"
-			  onchange={handleCountry}>
+			  onchange={handle}
+			 data-id="country">
 		   </lightning-input>
 		  <lightning-input 
 			  type="text" 
 			  label="PostalCode" 
-			  onchange={handlepostalCode}
+			  onchange={handle}
+		          data-id="postalcode"
 			  required="true">
 		   </lightning-input>
 		   <lightning-input type="checkbox" label="Save Address" name="input1" value ="true" onchange={handle}></lightning-input>
