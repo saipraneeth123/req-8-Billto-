@@ -75,6 +75,7 @@ public without sharing class B2B_MyAddressSelectorFlowController {
     @AuraEnabled
     public static String createShipToAddress(String name,String street,String city,String state,
                                                  String country,String postalCode){
+        try{
         User u=[Select Id,name,accountId  from user Where Id='0058I000000ugfEQAQ'];
         ContactPointAddress shippingAddress=new ContactPointAddress();
         shippingAddress.name=name;
@@ -87,6 +88,10 @@ public without sharing class B2B_MyAddressSelectorFlowController {
         shippingAddress.ParentId='0018I00000IxrvsQAB';
         insert shippingAddress;
         return shippingAddress.id;
+    }
+        catch(Excpetion e ){
+            throw new AuraHandleExcpetion(e.getMessage());
+        }
     }
 
  
@@ -122,9 +127,7 @@ public without sharing class B2B_MyAddressSelectorFlowController {
     @AuraEnabled
 
     public static string updateBillToAddress(String cartId,String contactPointAddressId){
-
-        
-
+        try{
             ContactPointAddress billToAddlist=[select Id,Name,isDefault,Street, City,State,country,PostalCode from
 
             ContactPointAddress where Id=:contactPointAddressId and AddressType='Billing' Limit 1];
@@ -146,6 +149,10 @@ public without sharing class B2B_MyAddressSelectorFlowController {
             update billingCartAddress;
 
             return 'Cart Bill to address has succesfully updated';
+        }
+        catch(Exception e ){
+            throw new AuraHandleExcpetion(e.getMessage());
+        }
 
            
 
@@ -155,9 +162,7 @@ public without sharing class B2B_MyAddressSelectorFlowController {
     @AuraEnabled
 
     public static string updateShipToAddress(String cartId,String contactPointAddressId){
-
-        
-
+        try{
         ContactPointAddress shippingAddresslist=[select Id,Name,isDefault,Street, City,State,country,PostalCode from
 
         ContactPointAddress where Id=:contactPointAddressId and AddressType='Shipping' Limit 1];
@@ -181,6 +186,10 @@ public without sharing class B2B_MyAddressSelectorFlowController {
         update cartAddress;
 
         return 'succesfully updated';
+        }
+        catch(Exception e ){
+            throw new AuraHandleException(e.getMessage());
+        }
 
            
 
