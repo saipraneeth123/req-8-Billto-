@@ -99,30 +99,26 @@ export default class B2b_myShipToAddressOnCheckout extends LightningElement {
     hideModalBox() {  
           this.isShowModal=false;
       }
-      handleName(event)
+      handle(event)
       {
-        this.name=event.target.value;
-      }
-      handleStreet(event)
-      {
-        this.street=event.target.value;
-      }
-      handleCity(event)
-      {
-        this.city=event.target.value;
-      }
-      handleState(event)
-      {
-        this.state=event.target.value;
-      }
-      handleCountry(event)
-      {
-        this.country=event.target.value;
-      }
-      handlepostalCode(event)
-      {
-        this.postalcode=event.target.value;
-      }
+       if(event.currentTarget.dataset.id=="Name"){  
+      this.name=event.target.value;         
+         }
+     else if(event.currentTarget.dataset.id=="street"){
+       this.street=event.target.value;         
+         }
+     else if(event.currentTarget.dataset.id=="city"){
+       this.city=event.target.value;         
+         }
+     else if(event.currentTarget.dataset.id=="state"){
+       this.state=event.target.value;         
+         }
+     else if(event.currentTarget.dataset.id=="country"){
+       this.country=event.target.value;         
+         }
+     else if(event.currentTarget.dataset.id=="postalcode"){
+       this.postalcode=event.target.value;         
+         }
       handleCheckboxChange(event)
       {
         console.log(this.save)
