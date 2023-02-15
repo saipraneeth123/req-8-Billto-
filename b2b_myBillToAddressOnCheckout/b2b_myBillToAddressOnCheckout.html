@@ -66,36 +66,42 @@
 		  <lightning-input 
 			  type="text" 
 			  label="Name" 
-			  onchange={handleName}
+			  onchange={handle}
+		          data-id="Name"
 			  required="true">
 		   </lightning-input>
 		  <lightning-input 
 			  type="text" 
 			  label="Street" 
-			  onchange={handleStreet}
+			  onchange={handle}
+		          data-id="street"
 			  >
 		   </lightning-input>
 		  <lightning-input 
 			  type="text" 
 			  label="City" 
-			  onchange={handleCity} >
-		   </lightning-input>
-		   <lightning-input 
-			  type="text" 
-			  label="State" 
-			  onchange={handleState} >
-		   </lightning-input>
-		  <lightning-input 
-			  type="text" 
-			  label="Country"
-			  onchange={handleCountry}>
-		   </lightning-input>
-		  <lightning-input 
-			  type="text" 
-			  label="PostalCode" 
-			  onchange={handlepostalCode}
-			  required="true">
-		</lightning-input>
+			  onchange={handle}
+			 data-id="city">
+	   </lightning-input>
+	   <lightning-input 
+		  type="text" 
+		  label="State" 
+		  onchange={handle}
+		  data-id="state">
+	   </lightning-input>
+	  <lightning-input 
+		  type="text" 
+		  label="Country"
+		  onchange={handle}
+			   data-id="country">
+	   </lightning-input>
+	  <lightning-input 
+		  type="text" 
+		  label="PostalCode" 
+		  onchange={handle}
+		  required="true"
+			   data-id="postalcode">
+	</lightning-input>
 			</div>
 		
 		<!-- modal footer start-->
